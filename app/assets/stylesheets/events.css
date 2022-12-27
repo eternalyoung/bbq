@@ -1,0 +1,51 @@
+/*
+(с) goodprogrammer.ru
+Наши дополнительные стили для красивого оформления плитки событий
+ */
+
+.event-info {
+  position: relative;
+  color: white;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.event-background {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+
+  background-size: cover;
+  background-position: center;
+
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+}
+
+.event-description * {
+  color: white;
+}
+
+.event-description a {
+  color: #d0d0ff;
+}
+
+.event-description small {
+  color: #e0e0e0;
+}
+
+.event-info-inner {
+  background:rgba(0, 0, 0, 0.4);
+}
+
+.event-map {
+  margin: 20px 0;
+  width: 100%;
+  height: 400px;
+}
