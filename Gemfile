@@ -3,16 +3,17 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
 gem 'bootsnap', require: false
+gem 'devise'
 gem 'importmap-rails'
 gem 'jbuilder'
+gem 'jquery-rails'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 7.0.4'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
+gem 'turbolinks'
 gem 'turbo-rails'
 gem 'twitter-bootstrap-rails'
-gem 'jquery-rails'
-gem 'turbolinks'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
