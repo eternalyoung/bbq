@@ -2,13 +2,21 @@
   <%= render partial: 'partials/form_errors', locals: {model: @user} %>
 
   <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name, class: 'form-control' %>
+    <div class="input-group">
+      <div class="input-group-addon">
+        <i class="fa fa-address-book fa-lg"></i>
+      </div>
+      <%= f.text_field :name, class: 'form-control', placeholder: 'Имя' %>
+    </div>
   </div>
 
   <div class="form-group">
-    <%= f.label :email %>
-    <%= f.text_field :email, class: 'form-control' %>
+    <div class="input-group">
+      <div class="input-group-addon">
+        <i class="fa fa-envelope fa-lg"></i>
+      </div>
+      <%= f.text_field :email, class: 'form-control', placeholder: 'Email' %>
+    </div>
   </div>
 
   <div class="actions">

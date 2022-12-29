@@ -1,0 +1,36 @@
+<h2>Вход</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon">
+        <i class="fa fa-envelope fa-lg"></i>
+      </div>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'Email' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon">
+        <i class="fa fa-key fa-lg"></i>
+      </div>
+      <%= f.password_field :password, autocomplete: "current-password", class: 'form-control', placeholder: 'Пароль' %>
+    </div>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="form-group">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me, class: 'form-check-label' %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit "Войти", class: 'btn btn-primary'%>
+  </div>
+<% end %>
+
+<p class="buffer-top">
+  <%= render "devise/shared/links" %>
+</p>

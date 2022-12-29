@@ -1,0 +1,40 @@
+<h2>Регистрирация</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon">
+        <i class="fa fa-envelope fa-lg"></i>
+      </div>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'Email' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon">
+        <i class="fa fa-key fa-lg"></i>
+      </div>
+      <%= f.password_field :password, autocomplete: "new-password", class: 'form-control', placeholder: 'Пароль' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon">
+        <i class="fa fa-key fa-lg"></i>
+      </div>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control', placeholder: 'Подтверждение пароля'  %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Зарегистрироваться", class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+<p class="buffer-top">
+  <%= render "devise/shared/links" %>
+</p>
