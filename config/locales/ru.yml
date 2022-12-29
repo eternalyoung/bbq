@@ -1,4 +1,7 @@
 ru:
+  change: 'Изменить'
+  delete: 'Удалить'
+
   activerecord:
     models:
       user: 'Пользователь'
@@ -26,6 +29,8 @@ ru:
   views:
     password_new:
       send: 'Отправить инструкции'
+    event_show:
+      delete_confirm: 'Вы точно хотите удалить мероприятие?'
 
   app:
     name: 'Шашлыки'
