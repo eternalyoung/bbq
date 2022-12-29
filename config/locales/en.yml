@@ -28,6 +28,9 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
+views:
+    password_new:
+      send: 'Send me reset password instructions'
 
 en:
   app:

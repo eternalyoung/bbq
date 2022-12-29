@@ -8,7 +8,7 @@
       <div class="input-group-addon">
         <i class="fa fa-envelope fa-lg"></i>
       </div>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'Email' %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: true %>
     </div>
   </div>
 
@@ -17,7 +17,7 @@
       <div class="input-group-addon">
         <i class="fa fa-key fa-lg"></i>
       </div>
-      <%= f.password_field :password, autocomplete: "new-password", class: 'form-control', placeholder: 'Пароль' %>
+      <%= f.password_field :password, autocomplete: "new-password", class: 'form-control', placeholder: true %>
     </div>
   </div>
 
@@ -26,7 +26,7 @@
       <div class="input-group-addon">
         <i class="fa fa-key fa-lg"></i>
       </div>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control', placeholder: 'Подтверждение пароля'  %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control', placeholder: true  %>
     </div>
   </div>
 
