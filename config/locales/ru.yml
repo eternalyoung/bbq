@@ -44,6 +44,15 @@ ru:
         title: 'Забыли пароль?'
         send: 'Отправить инструкции'
 
+  partials:
+    form_errors:
+      errors_count:
+        few: "В вашей форме %{count} ошибки:"
+        many: "В вашей форме  %{count} ошибок:"
+        one: "В вашей форме  %{count} ошибка:"
+        other: "В вашей форме  %{count} ошибок:"
+
+
   app:
     name: 'Шашлыки'
     company: 'Хороший программист'

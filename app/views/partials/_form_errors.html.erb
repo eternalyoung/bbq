@@ -4,7 +4,7 @@
   <div class="alert alert-danger">
     <button type="button" class="close" data-dismiss="alert">×</button>
     <div class="lead buffer-bottom">
-      В вашей форме <%= errors.count %> ошибок
+      <%= t('.errors_count', count: errors.count ) %>
     </div>
 
     <ul>
