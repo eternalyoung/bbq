@@ -41,6 +41,7 @@ ru:
   devise:
     passwords:
       new:
+        title: 'Забыли пароль?'
         send: 'Отправить инструкции'
 
   app:
