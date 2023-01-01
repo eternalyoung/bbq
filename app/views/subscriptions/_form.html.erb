@@ -3,13 +3,21 @@
 
     <% unless user_signed_in? %>
         <div class="form-group">
-          <%= f.label :user_name %>
-          <%= f.text_field :user_name, class: 'form-control' %>
+          <div class="input-group">
+            <div class="input-group-addon">
+              <i class="fa fa-address-book fa-lg"></i>
+            </div>
+            <%= f.text_field :user_name, class: 'form-control', placeholder: true %>
+          </div>
         </div>
 
         <div class="form-group">
-          <%= f.label :user_email %>
-          <%= f.text_field :user_email, class: 'form-control' %>
+          <div class="input-group">
+            <div class="input-group-addon">
+              <i class="fa fa-envelope fa-lg"></i>
+            </div>
+            <%= f.text_field :user_email, class: 'form-control', placeholder: true %>
+          </div>
         </div>
     <% end %>
 

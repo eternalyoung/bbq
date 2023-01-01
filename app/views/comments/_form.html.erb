@@ -2,15 +2,23 @@
     <%= render partial: 'partials/form_errors', locals: {model: comment} %>
 
     <div class="form-group">
-      <%= f.label :body %>
-      <%= f.text_area :body, class: 'form-control' %>
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-align-justify fa-lg"></i>
+          </div>
+          <%= f.text_area :body, class: 'form-control', placeholder: true %>
+        </div>
     </div>
 
     <% unless user_signed_in? %>
-        <div class="form-group">
-          <%= f.label :user_name %>
-          <%= f.text_field :user_name, class: 'form-control' %>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-address-book fa-lg"></i>
+          </div>
+          <%= f.text_field :user_name, class: 'form-control', placeholder: true %>
         </div>
+      </div>
     <% end %>
 
     <div class="actions">
