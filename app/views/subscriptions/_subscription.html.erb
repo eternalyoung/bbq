@@ -1,8 +1,8 @@
-<span class="subscription">
+<div class="subscription">
   <% if subscription.user.present? %>
     <%= render partial: 'users/user', object: subscription.user %>
   <% else %>
-    <em><%= subscription.user_name %></em>
+    <%= render partial: 'subscriptions/anonymous', locals: { subscription: subscription } %>
   <% end %>
   <% if current_user_can_edit?(subscription) %>
     <%= link_to(
@@ -12,4 +12,4 @@
             data: {confirm: t('.destroy_confirm')}
         ) %>
   <% end %>
-</span>
+</div>
