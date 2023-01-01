@@ -22,7 +22,7 @@
                 class: 'btn btn-primary' %>
               <%= link_to t('delete'), event_path(@event),
                 class: 'btn btn-danger', method: :delete, 
-                data: {confirm: t('views.event_show.delete_confirm')} %>
+                data: {confirm: t('.destroy_confirm')} %>
             </div>
           <% end %>
         </div>

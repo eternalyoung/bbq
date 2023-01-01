@@ -34,11 +34,14 @@ ru:
       destroyed: 'Участник отписан'
       error: 'Подписка/отписка не сработала'
 
-  views:
-    password_new:
-      send: 'Отправить инструкции'
-    event_show:
-      delete_confirm: 'Вы точно хотите удалить мероприятие?'
+  events:
+    show:
+      destroy_confirm: 'Вы точно хотите удалить мероприятие?'
+
+  devise:
+    passwords:
+      new:
+        send: 'Отправить инструкции'
 
   app:
     name: 'Шашлыки'
