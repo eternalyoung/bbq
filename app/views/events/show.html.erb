@@ -9,8 +9,10 @@
           <div class="event-description">
             <h1><%= @event.title %></h1>
             <h3><%= l @event.datetime, format: :short %></h3>
-            <h3><small><%= link_to @event.address,
-                "https://yandex.ru/maps/?text=#{@event.address}" %></small></h3>
+            <h3>
+              <small><%= link_to @event.address,
+                "https://yandex.ru/maps/?text=#{@event.address}" %></small>
+            </h3>
             <p><%= @event.description %></p>
           </div>
 
@@ -23,6 +25,44 @@
                 data: {confirm: t('views.event_show.delete_confirm')} %>
             </div>
           <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <div class="event-comments buffer-top">
+        <%= render partial: 'comments/form',
+          locals: {comment: @new_comment || @event.comments.build} %>
+
+        <div class="buffer-both">
+          <%= render partial: 'comments/comment',
+            collection: @event.comments.except(@new_comment) %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="event-owner">
+        <h4>Зовет:</h4>
+        <p><%= render partial: 'users/user', object: @event.user %></p>
+      </div>
+      <div class="event-subscriptions">
+        <h4>Пойдут:</h4>
+        <div>
+          <p>
+          <%= render partial: 'subscriptions/subscription',
+            collection: @event.subscriptions.except(@new_subscription) %>
+          </p>
+        </div>
+      </div>
+      <div class="event-subscription-form">
+        <h4>Я пойду:</h4>
+        <div>
+          <%= render partial: 'subscriptions/form', locals: {
+            subscription: @new_subscription || @event.subscriptions.build
+          } %>
         </div>
       </div>
     </div>

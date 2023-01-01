@@ -1,7 +1,10 @@
 class Event < ApplicationRecord
   # Событие принадлежит юзеру
   belongs_to :user
+  has_many :comments, dependent: :destroy
+  has_many :subscriptions, dependent: :destroy
 
+  has_many :subscribers, through: :subscriptions, source: :user
   # Юзера не может не быть. Обратите внимание, что в rails 5 связи валидируются
   # по умолчанию
   validates :user, presence: true
