@@ -75,3 +75,4 @@ ru:
   errors:
     messages:
       creator: не может быть создателем
+      already_registered: используется зарегистрированным пользователем
