@@ -13,7 +13,7 @@ class Subscription < ApplicationRecord
   # для данного event_id один email может использоваться только один раз (если нет юзера, анонимная подписка)
   validates :user_email, uniqueness: { scope: :event_id }, unless: -> { user.present? }
 
-  before_validation :event_creator_check, if: -> { user.present? }
+  after_validation :event_creator_check, if: -> { user.present? }
 
   # переопределяем метод, если есть юзер, выдаем его имя,
   # если нет -- дергаем исходный переопределенный метод
