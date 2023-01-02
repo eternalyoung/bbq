@@ -42,6 +42,6 @@ class Subscription < ApplicationRecord
   end
 
   def email_check
-    errors.add(:user_email, :already_registered) unless User.where(email: user_email).empty?
+    errors.add(:user_email, :already_registered) unless User.find_by(email: user_email).nil?
   end
 end
