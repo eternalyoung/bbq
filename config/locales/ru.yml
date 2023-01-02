@@ -71,3 +71,7 @@ ru:
   subscriptions:
     subscription:
       destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+  
+  errors:
+    messages:
+      creator: не может быть создателем
