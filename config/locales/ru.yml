@@ -6,10 +6,12 @@ ru:
     models:
       user: Пользователь
       event: Событие
+      photo: Фотография
     attributes:
       user:
         email: Email
         name: Имя
+        avatar: Аватар
         password: Пароль
         password_confirmation: Подтверждение пароля
       event:
@@ -23,6 +25,8 @@ ru:
       comment:
         body: Текст комментария
         user_name: Имя
+      photo:
+        photo: Фотография
 
   events:
     index:
@@ -96,6 +100,16 @@ ru:
       created: Вы подписаны на это событие
     destroy:
       destroyed: Участник отписан
+
+  photos:
+    create:
+      created: 'Вы добавили фотографию к событию'
+    destroy:
+      destroyed: 'Вы удалили фотку'
+    form:
+      upload: Загрузить
+    photo:
+      creator: Добавил
   
   errors:
     messages:
@@ -105,3 +119,5 @@ ru:
       error: Ошибка с комментарием
     subscriptions:
       error: Подписка/отписка не сработала
+    photos:
+      error: Что-то не так с фоткой
