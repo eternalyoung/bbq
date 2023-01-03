@@ -1,6 +1,4 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -8,16 +6,13 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :subscriptions, dependent: :destroy
 
-  # У юреза должно быть имя не длиннее 35 букв
   validates :name, presence: true, length: { maximum: 35 }
 
   before_validation :set_name, on: :create
-
   after_commit :link_subscriptions, on: :create
 
   private
 
-  # Задаем юзеру случайное имя, если оно пустое
   def set_name
     self.name = "Аноним ##{rand(9999)}" if self.name.blank?
   end

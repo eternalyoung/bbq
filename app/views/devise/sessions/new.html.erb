@@ -1,4 +1,4 @@
-<h2>Вход</h2>
+<h2><%= t('.sign_in')%></h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-group">
@@ -6,7 +6,7 @@
       <div class="input-group-addon">
         <i class="fa fa-envelope fa-lg"></i>
       </div>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'Email' %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: true %>
     </div>
   </div>
 
@@ -15,7 +15,7 @@
       <div class="input-group-addon">
         <i class="fa fa-key fa-lg"></i>
       </div>
-      <%= f.password_field :password, autocomplete: "current-password", class: 'form-control', placeholder: 'Пароль' %>
+      <%= f.password_field :password, autocomplete: "current-password", class: 'form-control', placeholder: true %>
     </div>
   </div>
 
@@ -27,7 +27,7 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Войти", class: 'btn btn-primary'%>
+    <%= f.submit t('.sign_in'), class: 'btn btn-primary'%>
   </div>
 <% end %>
 

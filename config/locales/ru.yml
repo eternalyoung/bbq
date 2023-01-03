@@ -1,55 +1,61 @@
 ru:
-  change: 'Изменить'
-  delete: 'Удалить'
+  change: Изменить
+  delete: Удалить
 
   activerecord:
     models:
-      user: 'Пользователь'
-      event: 'Событие'
+      user: Пользователь
+      event: Событие
     attributes:
       user:
-        email: 'Email'
-        name: 'Имя'
-        password: 'Пароль'
-        password_confirmation: 'Подтверждение пароля'
+        email: Email
+        name: Имя
+        password: Пароль
+        password_confirmation: Подтверждение пароля
       event:
-        title: 'Название'
-        address: 'Место проведения'
-        datetime: 'Дата и время'
-        description: 'Описание'
+        title: Название
+        address: Место проведения
+        datetime: Дата и время
+        description: Описание
       subscription:
-        user_name: 'Имя'
-        user_email: 'Email'
+        user_name: Имя
+        user_email: Email
       comment:
-        body: 'Текст комментария'
-        user_name: 'Имя'
-
-  controllers:
-    events:
-      created: 'Вы создали новое мероприятие'
-      updated: 'Вы обновили мероприятие'
-      destroyed: 'Вы удалили мероприятие :('
-    users:
-      updated: 'Вы обновили свой профиль'
-    comments:
-      destroyed: 'Комментарий удален'
-      created: 'Ваш комментарий добавлен'
-      error: 'Ошибка с комментарием'
-    subscriptions:
-      created: 'Вы подписаны на это событие'
-      destroyed: 'Участник отписан'
-      error: 'Подписка/отписка не сработала'
-      creator_error: 'Создатель не может подписаться на своё событие'
+        body: Текст комментария
+        user_name: Имя
 
   events:
+    index:
+      title: События
+      new: Создать событие
+    edit:
+      title: Редактирование события
     show:
-      destroy_confirm: 'Вы точно хотите удалить мероприятие?'
+      destroy_confirm: Вы точно хотите удалить мероприятие?
+      creator: Зовет
+      subscribers: Пойдут
+      subscribe: Я пойду
+    new:
+      title: Новое событие
+    form:
+      save: Сохранить
+      or: или
+      back: вернуться
+    create:
+      created: Вы создали новое мероприятие
+    update:
+      updated: Вы обновили мероприятие
+    destroy:
+      destroyed: Вы удалили мероприятие :(
 
-  devise:
-    passwords:
-      new:
-        title: 'Забыли пароль?'
-        send: 'Отправить инструкции'
+  users:
+    update:
+      updated: Вы обновили свой профиль
+    show:
+      no_events: Пользователь пока не организовал ни одного события
+      created: Организовал
+    edit:
+      profile: Редактирование профиля
 
   partials:
     form_errors:
@@ -59,20 +65,43 @@ ru:
         one: "В вашей форме  %{count} ошибка:"
         other: "В вашей форме  %{count} ошибок:"
 
+  devise:
+    registrations:
+      edit:
+        password_change: Смена пароля
 
-  app:
-    name: 'Шашлыки'
-    company: 'Хороший программист'
+  layouts:
+    application:
+      name: Шашлыки
+      company: Хороший программист
+      current_user: Профиль
+      exit: Выйти
+      login_in: Войти
+      sign_in: Зарегистрироваться
 
   comments:
     comment:
-      destroy_confirm: 'Вы уверены, что хотите удалить этот комменатрий?'
+      destroy_confirm: Вы уверены, что хотите удалить этот комменатрий?
+    destroyed:
+      destroyed: Комментарий удален
+    create:
+      created: Ваш комментарий добавлен
 
   subscriptions:
     subscription:
-      destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+      destroy_confirm: Вы уверены, что хотите удалить эту подписку?
+    form:
+      subscribe: Подписаться
+    create:
+      created: Вы подписаны на это событие
+    destroy:
+      destroyed: Участник отписан
   
   errors:
     messages:
       creator: не может быть создателем
       already_registered: используется зарегистрированным пользователем
+    comments:
+      error: Ошибка с комментарием
+    subscriptions:
+      error: Подписка/отписка не сработала

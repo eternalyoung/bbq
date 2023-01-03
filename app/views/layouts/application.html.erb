@@ -39,16 +39,16 @@
   <body>
   <div class="navbar navbar-default navbar-static-top">
     <div class="container">
-      <%= link_to t('app.name'), root_path, class: 'navbar-brand' %>
+      <%= link_to t('.name'), root_path, class: 'navbar-brand' %>
 
       <div class="navbar-collapse collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav">
           <% if user_signed_in? %>
-            <li><%= link_to 'Профиль', current_user %></li>
-            <li><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %></li>
+            <li><%= link_to t('.current_user'), current_user %></li>
+            <li><%= link_to t('.exit'), destroy_user_session_path, :method => :delete %></li>
           <% else %>
-            <li><%= link_to 'Войти', new_user_session_path %></li>
-            <li><%= link_to 'Зарегистрироваться', new_user_registration_path %></li>
+            <li><%= link_to t('.login_in'), new_user_session_path %></li>
+            <li><%= link_to t('.sign_in'), new_user_registration_path %></li>
           <% end %>
         </ul>
       </div>
@@ -67,7 +67,7 @@
     </div>
 
     <footer>
-      <p>&copy; <%= t 'app.company' %> 2022</p>
+      <p>&copy; <%= t '.company' %> 2022</p>
     </footer>
   </div>
 </body>

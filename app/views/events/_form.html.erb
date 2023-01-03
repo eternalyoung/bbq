@@ -1,4 +1,3 @@
-<%# Паршиал дляотображения формы создания нового события %>
 <%= form_for(@event) do |f| %>
   <%= render partial: 'partials/form_errors', locals: {model: @event} %>
 
@@ -7,7 +6,7 @@
       <div class="input-group-addon">
         <i class="fa fa-header fa-lg"></i>
       </div>
-      <%= f.text_field :title, class: 'form-control', placeholder: 'Название' %>
+      <%= f.text_field :title, class: 'form-control', placeholder: true %>
     </div>
   </div>
 
@@ -16,7 +15,7 @@
       <div class="input-group-addon">
         <i class="fa fa-map fa-lg"></i>
       </div>
-      <%= f.text_field :address, class: 'form-control', placeholder: :address %>
+      <%= f.text_field :address, class: 'form-control', placeholder: true %>
     </div>
   </div>
 
@@ -29,12 +28,12 @@
       <div class="input-group-addon">
         <i class="fa fa-align-justify fa-lg"></i>
       </div>
-      <%= f.text_area :description, class: 'form-control', placeholder: 'Описание' %>
+      <%= f.text_area :description, class: 'form-control', placeholder: true %>
     </div>
   </div>
 
   <div class="actions">
-    <%= f.submit 'Сохранить', class: 'btn btn-primary' %>
-    или <%= link_to 'вернуться', :back %>
+    <%= f.submit t('.save'), class: 'btn btn-primary' %>
+    <%= t('.or') %> <%= link_to t('.back'), :back %>
   </div>
 <% end %>

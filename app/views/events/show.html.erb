@@ -44,11 +44,11 @@
 
     <div class="col-md-4">
       <div class="event-owner">
-        <h4>Зовет:</h4>
+        <h4><%= t('.creator')%>:</h4>
         <p><%= render partial: 'users/user', object: @event.user %></p>
       </div>
       <div class="event-subscriptions">
-        <h4>Пойдут:</h4>
+        <h4><%= t('.subscribers')%>:</h4>
         <div>
           <p>
           <%= render partial: 'subscriptions/subscription',
@@ -58,7 +58,7 @@
       </div>
       <% unless current_user_can_edit?(@event) %>             
         <div class="event-subscription-form">
-          <h4>Я пойду:</h4>
+          <h4><%= t('.subscribe')%>:</h4>
           <div>
             <%= render partial: 'subscriptions/form', locals: {
               subscription: @new_subscription || @event.subscriptions.build
