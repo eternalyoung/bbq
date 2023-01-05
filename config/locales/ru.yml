@@ -103,13 +103,29 @@ ru:
 
   photos:
     create:
-      created: 'Вы добавили фотографию к событию'
+      created: Вы добавили фотографию к событию
     destroy:
-      destroyed: 'Вы удалили фотку'
+      destroyed: Вы удалили фотку
     form:
       upload: Загрузить
     photo:
       creator: Добавил
+    
+  event_mailer:
+    comment:
+      title: Новый комментарий
+      author: Автор
+      event: Событие
+      datetime: Состоится
+      owner: Организатор
+    subscription:
+      title: Новая подписка
+      name: Имя
+      email: Email
+      author: Автор
+      event: Событие
+      datetime: Состоится
+      owner: Организатор
   
   errors:
     messages:
