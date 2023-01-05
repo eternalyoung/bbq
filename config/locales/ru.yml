@@ -58,8 +58,13 @@ ru:
     show:
       no_events: Пользователь пока не организовал ни одного события
       created: Организовал
+      edit: Редактировать профиль
     edit:
       profile: Редактирование профиля
+    form:
+      save: Сохнаить
+      or: или
+      back: вернуться
 
   partials:
     form_errors:
@@ -90,6 +95,8 @@ ru:
       destroyed: Комментарий удален
     create:
       created: Ваш комментарий добавлен
+    form:
+      send: Отправить
 
   subscriptions:
     subscription:
