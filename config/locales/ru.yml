@@ -145,6 +145,7 @@ ru:
     messages:
       creator: не может быть создателем
       already_registered: используется зарегистрированным пользователем
+      extension_whitelist_error: Тип файла не подходит
     comments:
       error: Ошибка с комментарием
     subscriptions:
