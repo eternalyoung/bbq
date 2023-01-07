@@ -124,6 +124,7 @@ ru:
       upload: Загрузить
     photo:
       creator: Добавил
+      destroy_confirm: Вы точно хотите удалить фото?
     
   event_mailer:
     comment:

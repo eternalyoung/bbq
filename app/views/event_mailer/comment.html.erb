@@ -5,11 +5,11 @@
 <hr/>
 
 <%= t '.event' %>
-<h3><%= @event.title %></h3>
+<h3><%= link_to @event.title, @event %></h3>
 
 <%= t '.datetime' %>
 <h4><%= l @event.datetime %></h4>
 
 <%= t '.owner' %>
-<h4><%= @event.user.name %></h4>
+<h4><%= link_to @event.user.name, @event.user %></h4>
 

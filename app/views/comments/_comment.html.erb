@@ -10,10 +10,10 @@
     </span>
     <em><%= l comment.created_at, format: :short %></em>
     <% if current_user_can_edit?(comment) %>
-        <%= link_to(
-          fa_icon('trash'), event_comment_path(comment.event, comment),
-          method: :delete, data: {confirm: t('.destroy_confirm')}
-          ) %>
+      <%= link_to(
+        fa_icon('trash'), event_comment_path(comment.event, comment),
+        method: :delete, data: {confirm: t('.destroy_confirm')}
+        ) %>
     <% end %>
   </p>
 </div>

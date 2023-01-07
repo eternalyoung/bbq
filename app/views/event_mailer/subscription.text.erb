@@ -6,6 +6,6 @@
 
 ----------------------
 
-<%= t '.event' %> <%= @event.title %>
-<%= t '.datetime' %> <%= l @event.datetime %>
-<%= t '.owner' %>: <%= @event.user.name %>
+<%= t '.event' %>: <%= @event.title %> <%= "#{root_url}events/#{@event.id}"%>
+<%= t '.datetime' %>: <%= l @event.datetime %>
+<%= t '.owner' %>: <%= @event.user.name %> <%= "#{root_url}users/#{@event.user.id}"%>
