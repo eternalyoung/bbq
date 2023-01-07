@@ -1,0 +1,15 @@
+<h1><%= t '.title' %></h1>
+<img src=<%= root_url[0..-2] + @photo.photo.url %>>
+<p><%= t '.author' %>: <strong><%= @photo.user.name %></strong></p>
+
+<hr/>
+
+<%= t '.event' %>
+<h3><%= @event.title %></h3>
+
+<%= t '.datetime' %>
+<h4><%= l @event.datetime %></h4>
+
+<%= t '.owner' %>
+<h4><%= @event.user.name %></h4>
+

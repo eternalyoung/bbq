@@ -37,3 +37,6 @@
 config/database.yml
 config/secrets.yml
 .env
+
+public/uploads/photo/photo
+public/uploads/user
