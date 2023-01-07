@@ -19,6 +19,7 @@ ru:
         address: Место проведения
         datetime: Дата и время
         description: Описание
+        pincode: Пинкод доступа
       subscription:
         user_name: Имя
         user_email: Email
@@ -39,6 +40,7 @@ ru:
       creator: Зовет
       subscribers: Пойдут
       subscribe: Я пойду
+      wrong_pincode: Введен неправильный пинкод!
     new:
       title: Новое событие
     form:
@@ -51,6 +53,11 @@ ru:
       updated: Вы обновили мероприятие
     destroy:
       destroyed: Вы удалили мероприятие :(
+    password_form:
+      title: Введите пинкод доступа
+      save: Сохранить
+      or: или
+      back: на главуню
 
   users:
     update:
