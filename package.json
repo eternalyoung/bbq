@@ -1,0 +1,12 @@
+{
+  "name": "app",
+  "private": "true",
+  "dependencies": {
+    "bootstrap": "^3.4.1",
+    "font-awesome": "^4.7.0",
+    "sass": "^1.57.1"
+  },
+  "scripts": {
+    "build:css": "sass ./app/assets/stylesheets/application.sass.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules"
+  }
+}
