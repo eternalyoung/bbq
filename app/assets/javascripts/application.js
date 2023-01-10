@@ -7,4 +7,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap/dist/js/bootstrap.min.js
+//= require ekko-lightbox/dist/ekko-lightbox.min.js
 //= require_tree .
