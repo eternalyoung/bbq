@@ -21,7 +21,6 @@ gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbolinks'
 gem 'turbo-rails'
-gem 'twitter-bootstrap-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
