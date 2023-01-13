@@ -1,8 +1,8 @@
 <% errors = model.errors %>
 
 <% if errors.any? %>
-  <div class="alert alert-danger">
-    <button type="button" class="close" data-dismiss="alert">×</button>
+  <div class="alert alert-danger alert-dismissible fade show mt-3">
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     <div class="lead buffer-bottom">
       <%= t('.errors_count', count: errors.count ) %>
     </div>

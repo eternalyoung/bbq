@@ -3,10 +3,10 @@
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= render partial: 'partials/form_errors', locals: {model: @user} %>
 
-  <div class="form-group">
+  <div class="form-group mb-3">
     <div class="input-group">
-      <div class="input-group-addon">
-        <i class="fa fa-key fa-lg"></i>
+      <div class="input-group-text">
+        <i class="fa fa-key"></i>
       </div>
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: true %>
     </div>

@@ -18,8 +18,8 @@
   border-radius: 50%;
 }
 
-/* Thumbnails for events/index */
-.thumbnail {
+/* cards for events/index */
+.card {
   position: relative;
   background: transparent;
   padding: 0;
@@ -27,13 +27,13 @@
   border-radius: 5px;
 }
 
-.thumbnail h3 {
+.card h3 {
   white-space: nowrap;
   overflow: hidden;
   margin-top: 0;
   margin-bottom: .3em;
 }
 
-.thumbnail-inner {
+.card-inner {
   padding: 20px 4px 4px;
 }

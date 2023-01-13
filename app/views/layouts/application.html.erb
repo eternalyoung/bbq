@@ -39,18 +39,18 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
   <body>
-  <div class="navbar navbar-default navbar-static-top">
+  <div class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
     <div class="container">
       <%= link_to t('.name'), root_path, class: 'navbar-brand' %>
 
-      <div class="navbar-collapse collapse navbar-responsive-collapse">
-        <ul class="nav navbar-nav">
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
           <% if user_signed_in? %>
-            <li><%= link_to t('.current_user'), current_user %></li>
-            <li><%= link_to t('.exit'), destroy_user_session_path, :method => :delete %></li>
+            <li class="nav-item"><%= link_to t('.current_user'), current_user, class: 'nav-link'  %></li>
+            <li class="nav-item"><%= link_to t('.exit'), destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
           <% else %>
-            <li><%= link_to t('.login_in'), new_user_session_path %></li>
-            <li><%= link_to t('.sign_in'), new_user_registration_path %></li>
+            <li class="nav-item"><%= link_to t('.login_in'), new_user_session_path, class: 'nav-link'  %></li>
+            <li class="nav-item"><%= link_to t('.sign_in'), new_user_registration_path, class: 'nav-link'  %></li>
           <% end %>
         </ul>
       </div>

@@ -1,25 +1,25 @@
 <%= form_for @user, html: {multipart: true} do |f| %>
   <%= render partial: 'partials/form_errors', locals: {model: @user} %>
 
-  <div class="form-group">
+  <div class="form-group mb-3">
     <div class="input-group">
-      <div class="input-group-addon">
-        <i class="fa fa-address-book fa-lg"></i>
+      <div class="input-group-text">
+        <i class="fa fa-address-book"></i>
       </div>
       <%= f.text_field :name, class: 'form-control', placeholder: true %>
     </div>
   </div>
 
-  <div class="form-group">
+  <div class="form-group mb-3">
     <div class="input-group">
-      <div class="input-group-addon">
-        <i class="fa fa-envelope fa-lg"></i>
+      <div class="input-group-text">
+        <i class="fa fa-envelope"></i>
       </div>
       <%= f.text_field :email, class: 'form-control', placeholder: true %>
     </div>
   </div>
 
-  <div class="form-group">
+  <div class="form-group mb-3">
     <%= f.label :avatar %>
     <p><%= image_tag(@user.avatar.thumb.url) if @user.avatar? %></p>
     <%= f.file_field :avatar %>

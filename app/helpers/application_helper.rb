@@ -55,10 +55,10 @@ module ApplicationHelper
 
       tag_class = options.extract!(:class)[:class]
       tag_options = {
-        class: "alert fade in alert-#{type} #{tag_class}"
+        class: "alert alert-#{type} alert-dismissible fade show mt-3 #{tag_class}"
       }.merge(options)
 
-      close_button = content_tag(:button, raw("&times;"), type: "button", class: "close", "data-dismiss" => "alert")
+      close_button = content_tag(:button, raw(""), type: "button", class: "btn-close", "data-bs-dismiss" => "alert", "aria-label" => "Close")
 
       Array(message).each do |msg|
         text = content_tag(:div, close_button + msg, tag_options)

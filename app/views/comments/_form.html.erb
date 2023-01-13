@@ -1,20 +1,20 @@
 <%= form_for [@event, comment] do |f| %>
   <%= render partial: 'partials/form_errors', locals: {model: comment} %>
 
-  <div class="form-group">
+  <div class="form-group mb-3">
     <div class="input-group">
-      <div class="input-group-addon">
-        <i class="fa fa-align-justify fa-lg"></i>
+      <div class="input-group-text">
+        <i class="fa fa-align-justify"></i>
       </div>
       <%= f.text_area :body, class: 'form-control', placeholder: true %>
     </div>
   </div>
 
   <% unless user_signed_in? %>
-    <div class="form-group">
+    <div class="form-group mb-3">
       <div class="input-group">
-        <div class="input-group-addon">
-          <i class="fa fa-address-book fa-lg"></i>
+        <div class="input-group-text">
+          <i class="fa fa-address-book"></i>
         </div>
         <%= f.text_field :user_name, class: 'form-control', placeholder: true %>
       </div>

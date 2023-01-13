@@ -4,6 +4,7 @@
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
 // the compiled file.
 //
+//= require rails-ujs
 //= require jquery/dist/jquery.min.js
 //= require bootstrap/dist/js/bootstrap.min.js
 //= require ekko-lightbox/dist/ekko-lightbox.min.js
