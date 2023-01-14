@@ -5,6 +5,6 @@
     method: :delete, data: {confirm: t('.destroy_confirm')}
   ) if current_user_can_edit?(photo)%>
   <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url, data: {
-    toggle: 'lightbox', title: image_title, gallery: 'event-photos'
+    lightbox: 'photoset', title: image_title
   } %>
 </span>

@@ -5,7 +5,7 @@
 // the compiled file.
 //
 //= require rails-ujs
-//= require jquery/dist/jquery.min.js
-//= require bootstrap/dist/js/bootstrap.min.js
-//= require ekko-lightbox/dist/ekko-lightbox.min.js
+//= require jquery
+//= require bootstrap
+//= require lightbox2
 //= require_tree .
