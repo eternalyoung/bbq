@@ -7,7 +7,7 @@ set :branch, :main
 
 set :deploy_to, '/home/deploy/apps/bbq'
 
-append :linked_files, 'config/database.yml', 'master.key'
+append :linked_files, 'config/database.yml', 'config/master.key'
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'tmp/webpacker', 'public/system', 'vendor', 'storage'
 
 # Default branch is :master
