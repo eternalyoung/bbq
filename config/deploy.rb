@@ -3,6 +3,7 @@ lock "~> 3.17.1"
 
 set :application, "bbq"
 set :repo_url, "git@github.com:eternalyoung/bbq.git"
+set :branch, :main
 
 set :deploy_to, "/home/deploy/apps/bbq"
 
