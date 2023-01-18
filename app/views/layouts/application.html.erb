@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Bbq" %></title>
-    <script src="https://api-maps.yandex.ru/2.1?apikey=<%=ENV['YANDEX_MAP_API_KEY']%>&lang=ru_RU"></script>
+    <script src="https://api-maps.yandex.ru/2.1?apikey=<%=Rails.application.credentials.yandex[:map_api_key]%>&lang=ru_RU"></script>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag "application", :media => "all" %>
