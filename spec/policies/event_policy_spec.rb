@@ -32,7 +32,7 @@ RSpec.describe EventPolicy, type: :policy do
       let(:event) { create(:event, pincode: '777') }
       let(:cookies) { ActionDispatch::Cookies::CookieJar.new(nil) }
 
-      context 'when user is owner' do
+      context 'and user is owner' do
         let(:event) { create(:event, pincode: '777', user: user) }
 
         it 'grants access' do
@@ -40,7 +40,7 @@ RSpec.describe EventPolicy, type: :policy do
         end
       end
 
-      context 'when pincode is incorrect' do
+      context 'and pincode is incorrect' do
         let(:user) { UserContext.new(create(:user), { pincode: '', cookies: cookies }) }
 
         it 'denies access' do
@@ -48,7 +48,7 @@ RSpec.describe EventPolicy, type: :policy do
         end
       end
 
-      context 'when pincode is correct' do
+      context 'and pincode is correct' do
         let(:user) { UserContext.new(create(:user), { pincode: '777', cookies: cookies }) }
 
         it 'grants access' do
@@ -57,7 +57,7 @@ RSpec.describe EventPolicy, type: :policy do
         end
       end
 
-      context 'when cookies pincode is correct' do
+      context 'and cookies pincode is correct' do
         let(:user) { UserContext.new(create(:user), { pincode: '', cookies: cookies }) }
 
         it 'grants access' do
