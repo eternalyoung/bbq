@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe EventPolicy, type: :policy do
   subject { described_class }
-  let(:user) { create(:user) }
+  let(:cookies) { ActionDispatch::Cookies::CookieJar.new(nil) }
+  let(:user) { UserContext.new(create(:user), { pincode: '', cookies: cookies }) }
   let(:event) { create(:event) }
 
   permissions :edit?, :update?, :destroy? do
@@ -12,8 +13,8 @@ RSpec.describe EventPolicy, type: :policy do
       end
     end
 
-    context 'when user is owner' do 
-      let(:event) { create(:event, user: user) }
+    context 'when user is owner' do
+      let(:event) { create(:event, user: user.user) }
 
       it 'grants access' do
         expect(subject).to permit(user, event)
@@ -30,10 +31,9 @@ RSpec.describe EventPolicy, type: :policy do
 
     context 'when pincode is not blank' do
       let(:event) { create(:event, pincode: '777') }
-      let(:cookies) { ActionDispatch::Cookies::CookieJar.new(nil) }
 
       context 'and user is owner' do
-        let(:event) { create(:event, pincode: '777', user: user) }
+        let(:event) { create(:event, pincode: '777', user: user.user) }
 
         it 'grants access' do
           expect(subject).to permit(user, event)
@@ -41,8 +41,6 @@ RSpec.describe EventPolicy, type: :policy do
       end
 
       context 'and pincode is incorrect' do
-        let(:user) { UserContext.new(create(:user), { pincode: '', cookies: cookies }) }
-
         it 'denies access' do
           expect(subject).not_to permit(user, event)
         end

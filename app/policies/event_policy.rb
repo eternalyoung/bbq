@@ -1,12 +1,24 @@
 class EventPolicy < ApplicationPolicy
-  attr_reader :user, :record
+  class Scope < Scope
+    def resolve
+      scope.all
+    end
+  end
 
-  def edit?
-    user_is_owner?
+  def create?
+    !user.user.nil?
+  end
+
+  def new?
+    create?
   end
 
   def update?
     user_is_owner?
+  end
+
+  def edit?
+    update?
   end
 
   def destroy?
@@ -17,17 +29,10 @@ class EventPolicy < ApplicationPolicy
     pincode_check!
   end
 
-  class Scope < Scope
-    # NOTE: Be explicit about which records you allow access to!
-    # def resolve
-    #   scope.all
-    # end
-  end
-
   private
 
   def user_is_owner?
-    user.present? && (record&.user == user)
+    user.user.present? && (record&.user == user.user)
   end
 
   def pincode_check!

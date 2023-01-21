@@ -27,12 +27,14 @@ class ApplicationController < ActionController::Base
   private
 
   def user_not_authorized(exception)
-    if exception.record.class == Event && exception.query == 'show?'
+    policy_class = exception.policy.class
+
+    if policy_class == EventPolicy && exception.query == 'show?'
       flash.now[:alert] = t('.wrong_pincode') if params[:pincode].present?
       render 'password_form'
     else
-      policy_name = exception.record.class.to_s.underscore
-      flash[:alert] = t("#{policy_name}.#{exception.query}", scope: "pundit")
+      policy_name = policy_class.to_s.underscore
+      flash[:alert] = t("#{policy_name}.#{exception.query}", scope: 'pundit')
       redirect_back(fallback_location: root_path)
     end
   end
