@@ -94,5 +94,13 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.default_url_options = { host: 'bbq.kadproject.ru' }
 
-  config.action_mailer.delivery_method = :mailjet
+  config.action_mailer.delivery_method = :sendmail
+  # config.action_mailer.smtp_settings = {
+  #   address: 'smtp.gmail.com',
+  #   port: 587,
+  #   user_name: Rails.application.credentials.gmail[:user_name],
+  #   password: Rails.application.credentials.gmail[:password],
+  #   authentication: 'plain',
+  #   enable_starttls_auto: true
+  # }
 end
