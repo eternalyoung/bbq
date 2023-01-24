@@ -98,8 +98,7 @@ ru:
   comments:
     comment:
       destroy_confirm: Вы уверены, что хотите удалить этот комменатрий?
-    destroyed:
-      destroyed: Комментарий удален
+    destroyed: Комментарий удален
     create:
       created: Ваш комментарий добавлен
     form:
