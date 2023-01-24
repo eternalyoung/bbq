@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 class ApplicationPolicy
-  attr_reader :user, :record
+  attr_reader :context, :record
 
-  def initialize(user, record)
-    @user = user
+  def initialize(context, record)
+    @context = context
     @record = record
   end
 
@@ -37,8 +37,8 @@ class ApplicationPolicy
   end
 
   class Scope
-    def initialize(user, scope)
-      @user = user
+    def initialize(context, scope)
+      @context = context
       @scope = scope
     end
 
@@ -48,6 +48,6 @@ class ApplicationPolicy
 
     private
 
-    attr_reader :user, :scope
+    attr_reader :context, :scope
   end
 end
