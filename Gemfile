@@ -12,6 +12,7 @@ gem 'puma', '~> 5.0'
 gem 'pundit', '~> 2.3'
 gem 'rails', '~> 7.0.4'
 gem 'rails-i18n'
+gem 'resque', '~> 2.4'
 gem 'rmagick'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
@@ -19,13 +20,8 @@ gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
-  gem 'capistrano', '~> 3.8'
-  gem 'capistrano-bundler', '~> 1.2'
-  gem 'capistrano-passenger', '~> 0.2'
-  gem 'capistrano-rails', '~> 1.2'
-  gem 'capistrano-rbenv', '~> 2.1'
-
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+
   gem 'letter_opener'
   gem 'sqlite3', '~> 1.4'
 
@@ -34,9 +30,17 @@ group :development, :test do
 end
 
 group :development do
+  gem 'capistrano', '~> 3.8'
+  gem 'capistrano-bundler', '~> 1.2'
+  gem 'capistrano-passenger', '~> 0.2'
+  gem 'capistrano-rails', '~> 1.2'
+  gem 'capistrano-rbenv', '~> 2.1'
+  gem 'capistrano-resque', '~> 0.2.3', require: false
+
   gem 'web-console'
 end
 
 group :production do
   gem 'pg'
 end
+
