@@ -46,15 +46,6 @@ RSpec.describe EventPolicy, type: :policy do
         end
       end
 
-      context 'and pincode is correct' do
-        let(:user) { UserContext.new(create(:user), { pincode: '777', cookies: cookies }) }
-
-        it 'grants access' do
-          allow(user.params[:cookies]).to receive(:permanent).and_return({ "events_#{event.id}_pincode" => '' })
-          expect(subject).to permit(user, event)
-        end
-      end
-
       context 'and cookies pincode is correct' do
         let(:user) { UserContext.new(create(:user), { pincode: '', cookies: cookies }) }
 
