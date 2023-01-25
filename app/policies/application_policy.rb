@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 class ApplicationPolicy
-  attr_reader :context, :record
+  attr_reader :user, :record
+
+  delegate :user, to: :@context
+  delegate :params, to: :@context
 
   def initialize(context, record)
     @context = context

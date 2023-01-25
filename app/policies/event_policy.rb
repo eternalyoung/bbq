@@ -6,7 +6,7 @@ class EventPolicy < ApplicationPolicy
   end
 
   def create?
-    context.user.present?
+    user.present?
   end
 
   def new?
@@ -26,20 +26,20 @@ class EventPolicy < ApplicationPolicy
   end
 
   def show?
-    pincode_check!
+    pincode_allowed?
   end
 
   private
 
   def user_is_owner?
-    context.user.present? && (record&.user == context.user)
+    user.present? && (record&.user == user)
   end
 
-  def pincode_check!
+  def pincode_allowed?
     return true if record.pincode.blank?
     return true if user_is_owner?
 
-    pincode = context.params[:cookies].permanent["events_#{record.id}_pincode"]
+    pincode = params[:cookies].permanent["events_#{record.id}_pincode"]
     record.pincode_valid?(pincode)
   end
 end
