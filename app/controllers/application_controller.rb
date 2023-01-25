@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user_can_edit?
 
+  def privacy
+    render 'pages/privacy'
+  end
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(
       :account_update,
