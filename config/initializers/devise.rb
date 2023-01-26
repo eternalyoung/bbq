@@ -272,8 +272,9 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
 
-  config.omniauth :facebook, Rails.application.credentials.omniauth_facebook[:id],
-                  Rails.application.credentials.omniauth_facebook[:secret], scope: 'email', info_fields: 'id,first_name'
+  config.omniauth :vkontakte, Rails.application.credentials.omniauth_vkontakte[:id],
+                  Rails.application.credentials.omniauth_vkontakte[:secret],
+                  scope: 'email'
 
   config.omniauth :github, Rails.application.credentials.omniauth_github[:id],
                   Rails.application.credentials.omniauth_github[:secret],
