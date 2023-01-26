@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationPolicy
-  attr_reader :user, :params
+  attr_reader :user, :params, :record
 
   delegate :user, to: :@context
   delegate :params, to: :@context
