@@ -14,7 +14,7 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
 
-  def self.find_for_facebook_oauth(access_token)
+  def self.find_for_vkontakte_oauth(access_token)
     email = access_token.info.email
     user = where(email: email).first
 

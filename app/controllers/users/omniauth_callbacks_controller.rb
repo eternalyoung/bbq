@@ -1,14 +1,14 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  def facebook
-    @user = User.find_for_facebook_oauth(request.env['omniauth.auth'])
+  def vkontakte
+    @user = User.find_for_vkontakte_oauth(request.env['omniauth.auth'])
 
     if @user.persisted?
-      flash[:notice] = t('devise.omniauth_callbacks.success', kind: 'Facebook')
+      flash[:notice] = t('devise.omniauth_callbacks.success', kind: 'VK')
       sign_in_and_redirect @user, event: :authentication
     else
       flash[:error] = t(
         'devise.omniauth_callbacks.failure',
-        kind: 'Facebook',
+        kind: 'VK',
         reason: 'authentication error'
       )
 
