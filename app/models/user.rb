@@ -22,7 +22,7 @@ class User < ApplicationRecord
 
     provider = access_token.provider
     id = access_token.extra.raw_info.id
-    url = "https://facebook.com/#{id}"
+    url = "https://vkontakte.com/#{id}"
 
     where(url: url, provider: provider).first_or_create! do |user|
       user.email = email
