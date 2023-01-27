@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
@@ -17,36 +19,28 @@ class User < ApplicationRecord
     attachable.variant :full, resize_to_limit: [300, 300]
   end
 
-  def self.find_for_vkontakte_oauth(access_token)
-    email = access_token.info.email
+  def self.find_for_oauth(access_token)
+    email = access_token.info.email.downcase
     user = where(email: email).first
 
     return user if user.present?
 
     provider = access_token.provider
-    id = access_token.extra.raw_info.id
-    url = "https://vkontakte.com/#{id}"
+    id = access_token.uid
+    url = case provider
+          when 'vkontakte' then "https://vkontakte.com/id#{id}"
+          when 'github' then "https://github.com/users/#{id}"
+          end
+    image = URI.open(access_token.info.image)
 
     where(url: url, provider: provider).first_or_create! do |user|
       user.email = email
       user.password = Devise.friendly_token.first(16)
-    end
-  end
-
-  def self.find_for_github_oauth(access_token)
-    email = access_token.info.email
-    user = where(email: email).first
-
-    return user if user.present?
-
-    provider = access_token.provider
-    id = access_token.extra.raw_info.id
-    url = "https://github.com/users/#{id}"
-
-    where(url: url, provider: provider).first_or_create! do |user|
-      user.email = email
-      user.password = Devise.friendly_token.first(16)
-      user.name = access_token.info.nickname
+      user.name = case provider
+                  when 'vkontakte' then access_token.info.first_name
+                  when 'github' then access_token.info.nickname
+                  end
+      user.avatar.attach(io: image, filename: 'avatar', content_type: image.content_type)
     end
   end
 
