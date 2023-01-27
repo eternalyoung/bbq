@@ -103,14 +103,6 @@ GEM
       capistrano
       resque
       resque-scheduler
-    carrierwave (2.2.3)
-      activemodel (>= 5.0.0)
-      activesupport (>= 5.0.0)
-      addressable (~> 2.6)
-      image_processing (~> 1.1)
-      marcel (~> 1.0.0)
-      mini_mime (>= 0.1.3)
-      ssrf_filter (~> 1.0)
     concurrent-ruby (1.1.10)
     connection_pool (2.3.0)
     crass (1.0.6)
@@ -326,7 +318,6 @@ GEM
     sshkit (1.21.3)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
-    ssrf_filter (1.1.1)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
     thor (1.2.1)
@@ -362,12 +353,12 @@ DEPENDENCIES
   capistrano-rails (~> 1.2)
   capistrano-rbenv (~> 2.1)
   capistrano-resque (~> 0.2.3)
-  carrierwave
   cssbundling-rails (~> 1.1)
   debug
   devise
   devise-i18n
   factory_bot_rails (~> 6.2)
+  image_processing (~> 1.2)
   importmap-rails
   letter_opener
   omniauth (~> 2.1)

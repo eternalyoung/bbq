@@ -2,7 +2,7 @@
   <%= render partial: 'partials/form_errors', locals: {model: photo} %>
 
   <div class="form-group mb-3">
-    <%= f.file_field :photo %>
+    <%= f.file_field :photo, class: 'form-control' %>
   </div>
 
   <div class="actions">

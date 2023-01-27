@@ -4,7 +4,7 @@
     fa_icon('trash'), event_photo_path(photo.event, photo),
     method: :delete, data: {confirm: t('.destroy_confirm')}
   ) if current_user_can_edit?(photo)%>
-  <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url, data: {
+  <%= link_to image_tag(photo.photo.variant(:preview)), url_for(photo.photo), data: {
     lightbox: 'photoset', title: image_title
   } %>
 </span>

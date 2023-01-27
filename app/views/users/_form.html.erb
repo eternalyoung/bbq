@@ -21,8 +21,8 @@
 
   <div class="form-group mb-3">
     <%= f.label :avatar %>
-    <p><%= image_tag(@user.avatar.thumb.url) if @user.avatar? %></p>
-    <%= f.file_field :avatar %>
+    <p><%= image_tag(user_avatar_thumb(@user)) if @user.avatar.attached? %></p>
+    <%= f.file_field :avatar, input_html: { accept: ('image') }, class: 'form-control' %>
   </div>
 
   <div class="actions">

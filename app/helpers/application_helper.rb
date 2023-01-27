@@ -1,39 +1,26 @@
 module ApplicationHelper
-  def user_avatar(user)
-    user.avatar? ? user.avatar.url : default_avatar
-  end
-
   def default_avatar
     asset_path('user.png')
   end
 
+  def user_avatar(user)
+    user.avatar.attached? ? user.avatar.variant(:full) : default_avatar
+  end
+
   def user_avatar_thumb(user)
-    if user.avatar.file.present?
-      user.avatar.thumb.url
-    else
-      asset_path('user.png')
-    end
+    user.avatar.attached? ? user.avatar.variant(:thumb) : default_avatar
   end
 
   def event_photo(event)
     photos = event.photos.persisted
 
-    if photos.any?
-      photos.sample.photo.url
-    else
-      asset_path('event.jpg')
-    end
+    photos.any? ? url_for(photos.sample.photo) : asset_path('event.jpg')
   end
 
-  # Возвращает миниатюрную версию фотки
   def event_thumb(event)
     photos = event.photos.persisted
 
-    if photos.any?
-      photos.sample.photo.thumb.url
-    else
-      asset_path('event_thumb.jpg')
-    end
+    photos.any? ? url_for(photos.sample.photo.variant(:thumb)) : asset_path('event.jpg')
   end
 
   def fa_icon(icon_class)

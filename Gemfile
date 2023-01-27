@@ -3,10 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
 gem 'bootsnap', require: false
-gem 'carrierwave'
 gem 'cssbundling-rails', '~> 1.1'
 gem 'devise'
 gem 'devise-i18n'
+gem 'image_processing', '~> 1.2'
 gem 'importmap-rails'
 gem 'omniauth', '~> 2.1'
 gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
@@ -47,4 +47,3 @@ end
 group :production do
   gem 'pg'
 end
-

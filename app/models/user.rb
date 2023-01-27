@@ -12,7 +12,10 @@ class User < ApplicationRecord
   before_validation :set_name, on: :create
   after_commit :link_subscriptions, on: :create
 
-  mount_uploader :avatar, AvatarUploader
+  has_one_attached :avatar do |attachable|
+    attachable.variant :thumb, resize_to_fill: [100, 100]
+    attachable.variant :full, resize_to_limit: [300, 300]
+  end
 
   def self.find_for_vkontakte_oauth(access_token)
     email = access_token.info.email
