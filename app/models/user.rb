@@ -31,7 +31,11 @@ class User < ApplicationRecord
           when 'vkontakte' then "https://vkontakte.com/id#{id}"
           when 'github' then "https://github.com/users/#{id}"
           end
-    image = URI.open(access_token.info.image)
+
+    image = case provider
+            when 'vkontakte' then URI.open(access_token.extra.raw_info.photo_400_orig)
+            when 'github' then URI.open(access_token.info.image)
+            end
 
     where(url: url, provider: provider).first_or_create! do |user|
       user.email = email
@@ -40,6 +44,7 @@ class User < ApplicationRecord
                   when 'vkontakte' then access_token.info.first_name
                   when 'github' then access_token.info.nickname
                   end
+
       user.avatar.attach(io: image, filename: 'avatar', content_type: image.content_type)
     end
   end
