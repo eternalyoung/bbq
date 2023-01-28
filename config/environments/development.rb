@@ -75,6 +75,4 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.perform_deliveries = true
-  config.hosts << "lvh.me"
-  config.hosts << "a7aa-176-215-102-180.eu.ngrok.io"
 end

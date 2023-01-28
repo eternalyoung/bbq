@@ -57,7 +57,7 @@ ru:
       title: Введите пинкод доступа
       save: Сохранить
       or: или
-      back: на главуню
+      back: на главную
 
   users:
     update:
@@ -69,7 +69,7 @@ ru:
     edit:
       profile: Редактирование профиля
     form:
-      save: Сохнаить
+      save: Сохранить
       or: или
       back: вернуться
 
@@ -97,7 +97,7 @@ ru:
 
   comments:
     comment:
-      destroy_confirm: Вы уверены, что хотите удалить этот комменатрий?
+      destroy_confirm: Вы уверены, что хотите удалить этот комментарий?
     destroyed: Комментарий удален
     create:
       created: Ваш комментарий добавлен
