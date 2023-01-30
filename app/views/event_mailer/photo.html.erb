@@ -1,5 +1,5 @@
 <h1><%= t '.title' %></h1>
-<img src=<%= root_url[0..-2] + url_for(@photo.photo.variant(:thumb)) %>>
+<img src=<%= url_for(@photo.photo.variant(:thumb)) %>>
 <p><%= t '.author' %>: <strong><%= link_to @photo.user.name, @photo.user %></strong></p>
 
 <hr/>

@@ -1,7 +1,7 @@
 <%= t '.title' %>
 ----
 
-<%= root_url[0..-2] + url_for(@photo.photo) %>
+<%= url_for(@photo.photo) %>
 
 <%= t '.author' %>: <%= @photo.user.name %>
 
