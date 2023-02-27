@@ -1,49 +1,49 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.2'
-gem 'bootsnap', require: false
-gem 'cssbundling-rails', '~> 1.1'
-gem 'devise'
-gem 'devise-i18n'
-gem 'image_processing', '~> 1.2'
-gem 'importmap-rails'
-gem 'omniauth', '~> 2.1'
-gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
-gem 'omniauth-rails_csrf_protection', '~> 1.0'
-gem 'omniauth-vkontakte', '~> 1.8'
-gem 'puma', '~> 5.0'
-gem 'pundit', '~> 2.3'
-gem 'rails', '~> 7.0.4'
-gem 'rails-i18n'
-gem 'resque', '~> 2.4'
-gem 'rmagick'
-gem 'sprockets-rails'
-gem 'stimulus-rails'
-gem 'turbo-rails'
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+ruby "3.1.2"
+gem "bootsnap", require: false
+gem "cssbundling-rails", "~> 1.1"
+gem "devise"
+gem "devise-i18n"
+gem "image_processing", "~> 1.2"
+gem "importmap-rails"
+gem "omniauth", "~> 2.1"
+gem "omniauth-github", github: "omniauth/omniauth-github", branch: "master"
+gem "omniauth-rails_csrf_protection", "~> 1.0"
+gem "omniauth-vkontakte", "~> 1.8"
+gem "puma", "~> 5.0"
+gem "pundit", "~> 2.3"
+gem "rails", "~> 7.0.4"
+gem "rails-i18n"
+gem "resque", "~> 2.4"
+gem "rmagick"
+gem "sprockets-rails"
+gem "stimulus-rails"
+gem "turbo-rails"
+gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
-  gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem "debug", platforms: %i[mri mingw x64_mingw]
 
-  gem 'letter_opener'
-  gem 'sqlite3', '~> 1.4'
+  gem "letter_opener"
+  gem "sqlite3", "~> 1.4"
 
-  gem 'factory_bot_rails', '~> 6.2'
-  gem 'rspec-rails', '~> 6.0'
+  gem "factory_bot_rails", "~> 6.2"
+  gem "rspec-rails", "~> 6.0"
 end
 
 group :development do
-  gem 'capistrano', '~> 3.8'
-  gem 'capistrano-bundler', '~> 1.2'
-  gem 'capistrano-passenger', '~> 0.2'
-  gem 'capistrano-rails', '~> 1.2'
-  gem 'capistrano-rbenv', '~> 2.1'
-  gem 'capistrano-resque', '~> 0.2.3', require: false
+  gem "capistrano", "~> 3.8"
+  gem "capistrano-bundler", "~> 1.2"
+  gem "capistrano-passenger", "~> 0.2"
+  gem "capistrano-rails", "~> 1.2"
+  gem "capistrano-rbenv", "~> 2.1"
+  gem "capistrano-resque", "~> 0.2.3", require: false
 
-  gem 'web-console'
+  gem "web-console"
 end
 
 group :production do
-  gem 'pg'
+  gem "pg"
 end
