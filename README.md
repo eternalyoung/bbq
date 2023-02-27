@@ -1,24 +1,55 @@
-# README
+# BBQ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+BBQ - это `Ruby on Rails` приложение, которое позволяет пользователям создавать мероприятия, подписываться на мероприятия других пользователей, писать комментарии и загружать фото для мероприятий.
 
-Things you may want to cover:
+[Сайт с приложением](https://bbq.kadproject.ru/)
 
-* Ruby version
+## Установка
 
-* System dependencies
+Для установки BBQ на локальной машине, необходимо выполнить следующие шаги:
 
-* Configuration
+1. Склонировать репозиторий:
 
-* Database creation
+```
+git clone https://github.com/eternalyoung/bbq.git
+```
 
-* Database initialization
+2. Установить все необходимые гемы:
 
-* How to run the test suite
+```
+bundle install
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+3. Создать базу данных и запустить миграции:
 
-* Deployment instructions
+```
+rails db:create
+rails db:migrate
+```
 
-* ...
+4. Запустить локальный сервер:
+
+```
+rails server
+```
+
+5. Открыть веб-браузер и перейти по адресу http://localhost:3000/.
+
+## Использование
+
+После установки и запуска BBQ, вы можете создавать свои события, добавлять информацию о них и подписываться на мероприятия других пользователей. BBQ также предоставляет возможность для оставления комментариев и загрузки фото к мероприятиям.
+
+## Технологии
+
+BBQ написан на языке `Ruby` с использованием `Ruby on Rails` фреймворка. Для хранения данных локально используется база данных `SQLite3`, на продакшене `PostgreSQL` и NoSQL база данных `Redis` для хранения фоновых задач. BBQ также использует множество гемов, включая:
+
+- `devise` для аутентификации пользователей
+- `omniauth` для удобного входа с других площадок (требует настройки)
+- `active_storage`, `image_processing` и `rmagick` для работы с изображениями
+- `resque` для фоновых задач
+- `rspec` и `factory_bot` для тестирования
+- `capistrano` для удобного деплоя на продакшн сервер
+
+## Авторы
+
+BBQ был создан [eternalyoung](https://github.com/eternalyoung) в качестве учебного проекта.
